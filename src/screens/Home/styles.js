@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     position: 'absolute',
     top: 0,
-    color: 'black',
+    color: 'blue',
     width: '100%',
     textAlign: 'center',
   },
