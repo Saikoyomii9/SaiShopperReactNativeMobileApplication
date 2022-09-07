@@ -1,15 +1,15 @@
 
 import React from 'react';
-import ListsScreen from '../components/List/Index';
-import ItemsScreen from '../components/Item/Index';
-import { createBottomTabNavigator } from 'react-navigation/bottom-tabs';
+import ListsScreen from '../screens/Lists';
+import ItemsScreen from '../screens/Items';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = props => {
 
   return (
-    <Tab.TabNavigator
+    <Tab.Navigator
      screenOptions={{
       tabBarActiveTintColor: '#f15454',
       tabBarLabelStyle: {
@@ -25,8 +25,8 @@ const TabNavigator = props => {
     >
      <Tab.Screen name= {'Lists'} component={ListsScreen}/>
      <Tab.Screen name= {'Items'} component={ItemsScreen}/>
-    </Tab.TabNavigator>
+    </Tab.Navigator>
   );
 };
 
-export default Screen;
+export default TabNavigator;
