@@ -6,14 +6,14 @@ import styles from './styles';
 
 const ListsScreen = props => {
 
-        const navigation = useNavigation();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
-        <View style = {styles.bottom}>
+        <View style={styles.bottom}>
                 <TouchableOpacity
                 style ={styles.button}
-                onPress={()=> navigation.navigate('AddList')}
+                onPress={() => navigation.navigate('Add List')}
                 >
                 <Text style ={styles.buttonText}> Add List </Text>
                 </TouchableOpacity>

@@ -7,28 +7,29 @@ import styles from './styles';
 const AddList = props => {
 
         const navigation = useNavigation();
-        //Name of shopoing, store, date
-        const [name, setName] = useState('groceryShoppingList');
+        //Name of shopping, store, date
+        const [name, setName] = useState(' ');
         const [store, setStore] = useState(' ');
         const [date, setDate] = useState(' ');
 
         const onListAdd = ()  => { //Validation
-                if(!name ) {
-                        alert('Please emter a ashopping list Name!');
+                if(!name) {
+                        alert( 'Please enter a ashopping list name.');
                         return;
                 }
                 if(!store) {
-                        alert('Please emter a store name!');
+                        alert('Please enter a store name.');
                         return;
                 }
                 if(!date ) {
-                        alert('Please emter a date in format YYYT-MM-DD!');
+                        alert('Please enter a date in format YYYT-MM-DD!');
                         return;
                 }
-        }
+        
                 
                 alert(name + ' Added ');//Alert List has been added
-                navigation.navigate('Start Shopping!');
+                navigation.navigate(' Start Shopping!' );
+        }
 
   return (
     <View style={styles.container}>
@@ -38,7 +39,15 @@ const AddList = props => {
                         onChangeText={value => setName(value)}
                         style={styles.name}
                         clearButtonMode={'while-editing'}
-                        plasceholder={'Enter List Name'}
+                        placeholder={'Enter List Name'}
+                        placeholderTextColor={'grey'}
+                />
+                <TextInput  
+                        value = {store}
+                        onChangeText={value => setStore(value)}
+                        style={styles.store}
+                        clearButtonMode={'while-editing'}
+                        plasceholder={'Enter Store'}
                         placeholderTextColor={'grey'}
                 />
                 <TextInput  
@@ -49,25 +58,16 @@ const AddList = props => {
                         plasceholder={'Enter Date in format YYYY-MM-DD'}
                         placeholderTextColor={'grey'}
                 />
-                <TextInput  //Place Holder text
-                        value = {store}
-                        onChangeText={value => setStore(value)}
-                        style={styles.name}
-                        clearButtonMode={'while-editing'}
-                        plasceholder={'Enter List Name'}
-                        placeholderTextColor={'grey'}
-                />
 
         </View>
         <View style={styles.bottomContainer}>
                 <Pressable style={styles.button} onPress={onListAdd}>
-                        <Text style={styles.buttonText}>  Add </Text>
-
+                        <Text style={styles.buttonText}> Add</Text>
                 </Pressable>
 
         </View>
     </View>
   );
-  }
+  };
 
 export default AddList;
