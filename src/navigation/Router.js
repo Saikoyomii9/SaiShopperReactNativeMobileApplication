@@ -16,8 +16,8 @@ const Router = props => {
           component={HomeScreen}
           options={{headerShown: false}}
         />
-        <Stack.Screen name={'Start Shopping!'} component={TabNavigator}/>
-        <Stack.Screen name={'AddList'} component={AddList}/>
+        <Stack.Screen name = {'Start Shopping!'} component={TabNavigator}/>
+        <Stack.Screen name = {'Add List'} component = {AddList}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

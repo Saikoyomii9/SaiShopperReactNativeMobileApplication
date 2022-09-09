@@ -8,13 +8,13 @@ const AddList = props => {
 
         const navigation = useNavigation();
         //Name of shopping, store, date
-        const [name, setName] = useState(' ');
-        const [store, setStore] = useState(' ');
-        const [date, setDate] = useState(' ');
+        const [name, setName] = useState('');
+        const [store, setStore] = useState('');
+        const [date, setDate] = useState('');
 
         const onListAdd = ()  => { //Validation
                 if(!name) {
-                        alert( 'Please enter a ashopping list name.');
+                        alert( 'Please nter a shopping list name.');
                         return;
                 }
                 if(!store) {
@@ -28,14 +28,14 @@ const AddList = props => {
         
                 
                 alert(name + ' Added ');//Alert List has been added
-                navigation.navigate(' Start Shopping!' );
+                navigation.navigate('Start Shopping!' );
         }
 
   return (
     <View style={styles.container}>
         <View style={styles.topContainer}>
-                <TextInput  //Place Holder text
-                        value = {name}
+                <TextInput
+                        value={name}
                         onChangeText={value => setName(value)}
                         style={styles.name}
                         clearButtonMode={'while-editing'}
@@ -43,19 +43,19 @@ const AddList = props => {
                         placeholderTextColor={'grey'}
                 />
                 <TextInput  
-                        value = {store}
+                        value={store}
                         onChangeText={value => setStore(value)}
                         style={styles.store}
                         clearButtonMode={'while-editing'}
-                        plasceholder={'Enter Store'}
+                        placeholder={'Enter Store'}
                         placeholderTextColor={'grey'}
                 />
                 <TextInput  
-                        value = {date}
+                        value={date}
                         onChangeText={value => setDate(value)}
                         style={styles.date}
                         clearButtonMode={'while-editing'}
-                        plasceholder={'Enter Date in format YYYY-MM-DD'}
+                        placeholder={'Enter Date in format YYYY-MM-DD'}
                         placeholderTextColor={'grey'}
                 />
 
