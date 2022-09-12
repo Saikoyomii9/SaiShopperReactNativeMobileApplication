@@ -14,7 +14,7 @@ const AddList = props => {
 
         const onListAdd = ()  => { //Validation
                 if(!name) {
-                        alert( 'Please nter a shopping list name.');
+                        alert( 'Please enter a shopping list name.');
                         return;
                 }
                 if(!store) {
