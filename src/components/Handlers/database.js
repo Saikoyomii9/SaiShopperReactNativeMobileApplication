@@ -6,7 +6,7 @@ const shopperDB = openDatabase({name: 'Shopper.db'});
 const listsTableName = 'lists';
 
 module.exports = {
-        //declare the function that create the lists table
+        //Declare the function that create the lists table
         createListsTable: async function () {
                 //Declare a transaction that will execute a SQL statement
                 (await shopperDB).transaction(txn => {
@@ -23,7 +23,6 @@ module.exports = {
                                 //CALL BACK FUNCTION TO HANDLE  results of SQL query
                                 () => {
                                         console.log(' Lists table created successfully');
-
                                 },
                                 error => {
                                         console.log ('Error creating lists table ' + error.message);
@@ -44,7 +43,7 @@ module.exports = {
                                 [],
                                 // callback function to handle results of SQL query
                                 () => {
-                                        console.log('Lists table created successfully');
+                                        console.log(name + ' added successfully');
                                 },
                                 error => {
                                 console.log('Error  adding list ' + error.message);
