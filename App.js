@@ -11,14 +11,13 @@ import React from 'react';
 import type {Node} from 'react';
 import Router from './src/navigation/Router';
 
-const database = require('./src/components/Handlers/database.js')
+const db = require('./src/components/Handlers/database.js');
 
 const App: () => Node = () => {
   try {
-    database.createListsTable();
-
+    db.createListsTable();
   } catch (error) {
-    console.log('failed to create lists table ' + error);
+    console.log('Failed to create lists table ' + error);
   }
   return <Router />;
 };

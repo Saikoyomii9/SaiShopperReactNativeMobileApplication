@@ -1,27 +1,30 @@
 import React from 'react';
-import  { View, TouchableOpacity, Text } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import styles from './styles';
 
+const List = props => {
+  
+  const post = props.post; //added
 
-const ListsScreen = props => {
+  const onPress = () => { //added
+    console.log(post.name);
+  }
 
-    const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
-     <View style={styles.bottom}>
-      <TouchableOpacity
-       style={styles.bottom}
-       onPress={()=>console.log('Add List')}
-       >
-        <Text style={styles.buttonText}>Add List</Text>
+      <TouchableOpacity style={styles.touchable} onPress={onPress}>
+          <View style={{flex:2}}>
+            <Text style={styles.name} numberOfLines={1}>{post.name}</Text>
+            <Text style={styles.store} numberOfLines={1}>{post.store}</Text> 
+          </View>
+          <View style={{flex:1}}>
+            <Text style={styles.date}>{post.date}</Text>
+          </View>
+        </TouchableOpacity>
 
-      </TouchableOpacity>
-
-     </View>
     </View>
   );
 };
 
-export default ListsScreen;
+export default List;

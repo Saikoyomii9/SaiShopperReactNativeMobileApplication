@@ -7,11 +7,11 @@ const listsTableName = 'lists';
 
 module.exports = {
         //declare the function that create the lists table
-        createListsTable: async function() {
+        createListsTable: async function () {
                 //Declare a transaction that will execute a SQL statement
-                (await shopperDB.transaction )(txn => {
+                (await shopperDB).transaction(txn => {
                         //Execute the SQL
-                        txn.executeSQL(
+                        txn.executeSql(
                                 `CREATE TABLE IF NOT EXISTS ${listsTableName}(
                                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                                         name TEXT,
@@ -22,7 +22,7 @@ module.exports = {
                                 [],
                                 //CALL BACK FUNCTION TO HANDLE  results of SQL query
                                 () => {
-                                        console.log(' table created successfully');
+                                        console.log(' Lists table created successfully');
 
                                 },
                                 error => {
@@ -38,13 +38,13 @@ module.exports = {
                 //declare  a transaction that will execute an SQL statement
                 (await shopperDB).transaction(txn => {
                         //execute the SQL
-                        txn.executeSQL(
+                        txn.executeSql(
                                 `INSERT INTO ${listsTableName} (name, store, date) VALUES ("${name}", "${store}", "${date}")`,
                                 //arguments passed when using SQL prepared statement
                                 [],
                                 // callback function to handle results of SQL query
                                 () => {
-                                        console.log(name + " added successfully")
+                                        console.log('Lists table created successfully');
                                 },
                                 error => {
                                 console.log('Error  adding list ' + error.message);
