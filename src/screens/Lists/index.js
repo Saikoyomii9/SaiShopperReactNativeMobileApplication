@@ -17,7 +17,14 @@ const ListsScreen = props => {
           store: 'Redners',
           date: '2022-09-14',
         },
+        {
+          id: 2,
+          name: 'Back to School',
+          store: 'Staples',
+          date: '2022-09-15',
+        },
       ]
+      
     );
     
 
@@ -28,15 +35,18 @@ const ListsScreen = props => {
           data={lists}
           renderItem={({item}) => <List post={item} />} 
           />
+          </View>
+          <View style={styles.bottom}>
       <TouchableOpacity
-       style={styles.bottom}
-       onPress={()=>console.log('Add List')}
+       style={styles.button}
+       onPress={()=>navigation.navigate('Add List')}
        >
         <Text style={styles.buttonText}>Add List</Text>
 
       </TouchableOpacity>
+      </View>
 
-     </View>
+     
     </View>
   );
 };
