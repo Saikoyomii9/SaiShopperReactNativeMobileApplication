@@ -12,7 +12,7 @@ const AddList = props => {
         const [store, setStore] = useState('');
         const [date, setDate] = useState('');
 
-        const onListAdd = ()  => { //Validation
+        const onListAdd = ()  => { //Validation //declaring a function
                 if(!name) {
                         alert( 'Please enter a shopping list name.');
                         return;
@@ -67,7 +67,7 @@ const AddList = props => {
 
         </View>
         <View style={styles.bottomContainer}>
-                <Pressable style={styles.button} onPress={onListAdd}>
+                 <Pressable style={styles.button} onPress={onListAdd}> 
                         <Text style={styles.buttonText}> Add</Text>
                 </Pressable>
 

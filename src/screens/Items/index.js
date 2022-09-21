@@ -11,9 +11,9 @@ const ItemsScreen = props => {
         <View style = {styles.bottom}>
                 <TouchableOpacity
                 style ={styles.button}
-                onPress={()=> console.log('Add List')}
+                onPress={()=> console.log('Add Item!')}
                 >
-                <Text style ={styles.buttonText}> Add List </Text>
+                <Text style ={styles.buttonText}> Add item </Text>
                 </TouchableOpacity>
 
         </View>

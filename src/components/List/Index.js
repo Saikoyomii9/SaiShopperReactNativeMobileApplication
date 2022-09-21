@@ -6,14 +6,14 @@ const List = props => {
   
   const post = props.post; //added
 
-  const onPress = () => { //added
+  const onPress = () => { //added function
     console.log(post.name);
   }
 
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.touchable} onPress={onPress}>
+       <TouchableOpacity style={styles.touchable} onPress={onPress}> 
           <View style={{flex:2}}>
             <Text style={styles.name} numberOfLines={1}>{post.name}</Text>
             <Text style={styles.store} numberOfLines={1}>{post.store}</Text> 
