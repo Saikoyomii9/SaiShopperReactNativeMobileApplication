@@ -10,7 +10,7 @@ const List = props => {
   const navigation = useNavigation();
 
   const onPress = () => { //added function
-    navigation.navigate('Existing List', {post: post});
+    console.log('Existing List', {post: post});
   }
 
 
